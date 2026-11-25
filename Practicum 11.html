@@ -1,0 +1,393 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conference Management Gallery</title>
+    <link rel="stylesheet" href="11.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>Conference Management System</h1>
+        <p>Explore Our Conference Events and Activities</p>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#manage">Manage Events</a>
+        <a href="#registration">Registration</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+
+        <section id="home" class="card">
+
+            <h2>Welcome to Our Conference Gallery</h2>
+
+            <p>
+                Explore memorable moments from our conferences,
+                technical sessions, workshops and networking events.
+                Our gallery showcases innovation, learning and teamwork.
+            </p>
+
+            <!-- Information Button -->
+            <button id="infoBtn" class="action-button">
+                Show Conference Information
+            </button>
+
+            <!-- Information Card -->
+            <div id="infoCard" class="info-card">
+
+                <h3>Conference Information</h3>
+
+                <p>
+                    Our conference provides opportunities to learn
+                    new technologies, meet experts and develop skills.
+                </p>
+
+            </div>
+
+            <!-- Notification -->
+            <div id="notification" class="notification">
+                Welcome to the Conference Management System!
+            </div>
+
+        </section>
+
+        <!-- Image Gallery -->
+        <section id="gallery" class="card">
+
+            <h2>Conference Image Gallery</h2>
+
+            <div class="gallery">
+
+                <div class="gallery-item">
+                    <img src="conference1.jpg.webp" alt="Conference opening ceremony">
+                    <div class="caption">
+                        <h3>Opening Ceremony</h3>
+                        <p>Inauguration of the annual conference.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="conference2.jpg.webp" alt="Guest speaker presenting">
+                    <div class="caption">
+                        <h3>Guest Speakers</h3>
+                        <p>Experts sharing their knowledge and ideas.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="conference3.jpg.jpg" alt="Technical presentation">
+                    <div class="caption">
+                        <h3>Technical Sessions</h3>
+                        <p>Presentations about modern technologies.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="conference4.jpg.jpg" alt="Students attending workshop">
+                    <div class="caption">
+                        <h3>Workshops</h3>
+                        <p>Practical learning and interactive activities.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="conference5.jpg.jpg" alt="Conference participants networking">
+                    <div class="caption">
+                        <h3>Networking</h3>
+                        <p>Connecting students and industry professionals.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="conference6.jpg.webp" alt="Conference award ceremony">
+                    <div class="caption">
+                        <h3>Award Ceremony</h3>
+                        <p>Recognizing achievements and excellence.</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="card">
+
+            <h2>About Our Events</h2>
+
+            <p>
+                Our conference provides a platform for students,
+                professionals and industry experts to exchange ideas,
+                explore innovations and develop professional skills.
+            </p>
+
+            <!-- Show More / Show Less -->
+            <button id="aboutBtn" class="action-button">
+                Show More
+            </button>
+
+            <div id="moreContent">
+
+                <h3>Our Conference Activities</h3>
+
+                <p>
+                    We organize technical sessions, workshops,
+                    expert talks, networking activities and award
+                    ceremonies to encourage learning and innovation.
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- PRACTICUM 10: DOM MANIPULATION -->
+        <section id="manage" class="card">
+
+            <h2>Conference Event Management</h2>
+
+            <p>
+                Add, update, display and remove conference events
+                dynamically using JavaScript.
+            </p>
+
+            <!-- Event Form -->
+            <form id="eventForm">
+
+                <label>Event Name:</label>
+
+                <input type="text"
+                       id="eventName"
+                       placeholder="Enter event name"
+                       required>
+
+                <label>Event Description:</label>
+
+                <textarea id="eventDescription"
+                          placeholder="Enter event description"
+                          required></textarea>
+
+                <label>Event Date:</label>
+
+                <input type="date"
+                       id="eventDate"
+                       required>
+
+                <button type="submit" class="action-button">
+                    Add Event
+                </button>
+
+            </form>
+
+            <hr>
+
+            <!-- Display Dynamic Events -->
+            <h2>Available Conference Events</h2>
+
+            <div id="eventList">
+
+                <p id="emptyMessage">
+                    No additional events added yet.
+                </p>
+
+            </div>
+
+            <button id="clearBtn" class="clear-button">
+                Remove All Added Events
+            </button>
+
+        </section>
+
+        <!-- NEW: PRACTICUM 11 FORM VALIDATION -->
+        <section id="registration" class="card">
+
+            <h2>Conference Registration Form</h2>
+
+            <p>
+                Register for our conference by filling in the
+                required details. Please enter valid information.
+            </p>
+
+            <form id="registrationForm" novalidate>
+
+                <fieldset>
+
+                    <legend>Personal Information</legend>
+
+                    <!-- Name -->
+                    <label for="regName">Full Name:</label>
+
+                    <input type="text"
+                           id="regName"
+                           name="regName"
+                           placeholder="Enter your full name"
+                           minlength="3"
+                           maxlength="40"
+                           pattern="[A-Za-z ]{3,40}"
+                           title="Name must contain 3 to 40 letters"
+                           required>
+
+                    <span class="error-message" id="nameError"></span>
+
+                    <!-- Email -->
+                    <label for="regEmail">Email Address:</label>
+
+                    <input type="email"
+                           id="regEmail"
+                           name="regEmail"
+                           placeholder="example@email.com"
+                           maxlength="60"
+                           required>
+
+                    <span class="error-message" id="emailError"></span>
+
+                    <!-- Phone -->
+                    <label for="regPhone">Phone Number:</label>
+
+                    <input type="tel"
+                           id="regPhone"
+                           name="regPhone"
+                           placeholder="Enter 10-digit phone number"
+                           pattern="[0-9]{10}"
+                           minlength="10"
+                           maxlength="10"
+                           title="Enter exactly 10 digits"
+                           required>
+
+                    <span class="error-message" id="phoneError"></span>
+
+                    <!-- Age -->
+                    <label for="regAge">Age:</label>
+
+                    <input type="number"
+                           id="regAge"
+                           name="regAge"
+                           placeholder="Enter your age"
+                           min="16"
+                           max="100"
+                           required>
+
+                    <span class="error-message" id="ageError"></span>
+
+                </fieldset>
+
+                <fieldset>
+
+                    <legend>Conference Details</legend>
+
+                    <!-- Department -->
+                    <label for="department">Department:</label>
+
+                    <select id="department"
+                            name="department"
+                            required>
+
+                        <option value="">Select Department</option>
+                        <option value="Computer Science">Computer Science</option>
+                        <option value="Information Technology">Information Technology</option>
+                        <option value="Electronics">Electronics</option>
+                        <option value="Mechanical">Mechanical</option>
+                        <option value="Civil">Civil</option>
+                        <option value="Other">Other</option>
+
+                    </select>
+
+                    <span class="error-message" id="departmentError"></span>
+
+                    <!-- Event Selection -->
+                    <label for="regEvent">Select Conference Event:</label>
+
+                    <select id="regEvent"
+                            name="regEvent"
+                            required>
+
+                        <option value="">Choose an Event</option>
+                        <option value="Technical Session">Technical Session</option>
+                        <option value="Workshop">Workshop</option>
+                        <option value="Guest Lecture">Guest Lecture</option>
+                        <option value="Networking Session">Networking Session</option>
+                        <option value="Paper Presentation">Paper Presentation</option>
+
+                    </select>
+
+                    <span class="error-message" id="eventError"></span>
+
+                    <!-- Registration Date -->
+                    <label for="regDate">Registration Date:</label>
+
+                    <input type="date"
+                           id="regDate"
+                           name="regDate"
+                           required>
+
+                    <span class="error-message" id="dateError"></span>
+
+                    <!-- Additional Information -->
+                    <label for="regMessage">Additional Information:</label>
+
+                    <textarea id="regMessage"
+                              name="regMessage"
+                              placeholder="Enter any additional information"
+                              minlength="5"
+                              maxlength="200"></textarea>
+
+                </fieldset>
+
+                <button type="submit" class="action-button">
+                    Submit Registration
+                </button>
+
+                <button type="reset" class="reset-button">
+                    Reset Form
+                </button>
+
+                <!-- Validation and Success Messages -->
+                <p id="formError" class="form-error"></p>
+
+                <div id="successMessage" class="success-message">
+                </div>
+
+            </form>
+
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact">
+
+        <p>
+            &copy; 2026 Conference Management System.
+            All Rights Reserved.
+        </p>
+
+        <p>Email: conference@example.com</p>
+
+    </footer>
+
+    <!-- Responsive Menu Button -->
+    <button class="menu-button" onclick="toggleMenu()">
+        ☰ Menu
+    </button>
+
+    <!-- Back to Top Button -->
+    <button class="top-button" onclick="goToTop()">
+        ↑ Top
+    </button>
+
+    <script src="11.js"></script>
+
+</body>
+</html>

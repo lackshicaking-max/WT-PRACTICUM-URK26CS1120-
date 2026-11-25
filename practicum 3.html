@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conference Management</title>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>Conference Management System</h1>
+        <p>
+            Welcome to our conference management webpage.
+            We help organize successful conferences and events.
+        </p>
+    </header>
+
+    <hr>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="#home">Home</a> |
+        <a href="#about">About</a> |
+        <a href="#schedule">Schedule</a> |
+        <a href="#register">Register</a>
+    </nav>
+
+    <hr>
+
+    <!-- Main Section -->
+    <main>
+
+        <section id="home">
+
+            <h2>Welcome to the Conference</h2>
+
+            <p>
+                Our conference brings together students, professionals,
+                speakers and industry experts to share knowledge and ideas.
+            </p>
+
+            <!-- Image -->
+            <img src="conference Management.png"
+                 alt="Conference Event"
+                 width="500">
+
+            <hr>
+
+            <!-- Audio Section -->
+            <h2>Conference Welcome Audio</h2>
+
+            <p>Listen to our conference welcome audio:</p>
+
+            <audio controls>
+                <source src="C:\Users\lackshica\Downloads\freesound_community-peopletalking-54730.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+
+            <hr>
+
+            <!-- Video Section -->
+            <h2>Conference Introduction Video</h2>
+
+            <p>Watch our conference introduction video:</p>
+
+            <video width="500" controls>
+                <source src="C:\Users\lackshica\Downloads\6172811-hd_1920_1080_30fps.mp4" type="video/mp4">
+                Your browser does not support the video element.
+            </video>
+
+            <p>Caption: Introduction to the Conference Management System.</p>
+
+        </section>
+
+        <hr>
+
+        <!-- About Article -->
+        <article id="about">
+
+            <h2>About the Conference</h2>
+
+            <p>
+                This conference focuses on technology, innovation and
+                professional development.
+            </p>
+
+            <h3>Conference Features</h3>
+
+            <ul>
+                <li>Expert Speakers</li>
+                <li>Technical Sessions</li>
+                <li>Networking Opportunities</li>
+                <li>Interactive Workshops</li>
+            </ul>
+
+            <h3>Conference Activities</h3>
+
+            <ol>
+                <li>Registration</li>
+                <li>Opening Ceremony</li>
+                <li>Technical Sessions</li>
+                <li>Closing Ceremony</li>
+            </ol>
+
+        </article>
+
+        <hr>
+
+        <!-- Schedule Section -->
+        <section id="schedule">
+
+            <h2>Conference Schedule</h2>
+
+            <table border="1" cellpadding="10">
+
+                <tr>
+                    <th>Time</th>
+                    <th>Event</th>
+                    <th>Speaker</th>
+                </tr>
+
+                <tr>
+                    <td>10:00 AM</td>
+                    <td>Opening Ceremony</td>
+                    <td>Conference Team</td>
+                </tr>
+
+                <tr>
+                    <td>11:00 AM</td>
+                    <td>Technology Session</td>
+                    <td>Guest Speaker</td>
+                </tr>
+
+                <tr>
+                    <td>2:00 PM</td>
+                    <td>Workshop</td>
+                    <td>Industry Expert</td>
+                </tr>
+
+            </table>
+
+        </section>
+
+        <hr>
+
+        <!-- Registration Form -->
+        <section id="register">
+
+            <h2>Participant Registration Form</h2>
+
+            <form action="#" method="post" enctype="multipart/form-data">
+
+                <!-- Text Input -->
+                <label for="name">Full Name:</label><br>
+                <input type="text" id="name" name="name"
+                       placeholder="Enter your name"
+                       required minlength="3">
+                <br><br>
+
+                <!-- Email Input -->
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email"
+                       placeholder="Enter your email"
+                       required>
+                <br><br>
+
+                <!-- Password Input -->
+                <label for="password">Password:</label><br>
+                <input type="password" id="password" name="password"
+                       placeholder="Enter password"
+                       required minlength="6">
+                <br><br>
+
+                <!-- Number Input -->
+                <label for="phone">Phone Number:</label><br>
+                <input type="number" id="phone" name="phone"
+                       placeholder="Enter phone number"
+                       required min="1000000000" max="9999999999">
+                <br><br>
+
+                <!-- Date Input -->
+                <label for="date">Date of Birth:</label><br>
+                <input type="date" id="date" name="date" required>
+                <br><br>
+
+                <!-- Radio Buttons -->
+                <label>Gender:</label><br>
+                <input type="radio" id="male" name="gender"
+                       value="Male" required>
+                <label for="male">Male</label>
+
+                <input type="radio" id="female" name="gender"
+                       value="Female">
+                <label for="female">Female</label>
+
+                <input type="radio" id="other" name="gender"
+                       value="Other">
+                <label for="other">Other</label>
+                <br><br>
+
+                <!-- Checkboxes -->
+                <label>Choose Conference Sessions:</label><br>
+                <input type="checkbox" id="tech" name="session"
+                       value="Technology">
+                <label for="tech">Technology</label><br>
+
+                <input type="checkbox" id="workshop" name="session"
+                       value="Workshop">
+                <label for="workshop">Workshop</label><br>
+
+                <input type="checkbox" id="innovation" name="session"
+                       value="Innovation">
+                <label for="innovation">Innovation</label>
+                <br><br>
+
+                <!-- Dropdown -->
+                <label for="department">Department:</label><br>
+                <select id="department" name="department" required>
+                    <option value="">Select Department</option>
+                    <option value="CSE">Computer Science</option>
+                    <option value="IT">Information Technology</option>
+                    <option value="ECE">Electronics</option>
+                    <option value="MECH">Mechanical</option>
+                    <option value="CIVIL">Civil</option>
+                </select>
+                <br><br>
+
+                <!-- Textarea -->
+                <label for="message">Address / Comments:</label><br>
+                <textarea id="message" name="message"
+                          rows="4" cols="40"
+                          placeholder="Enter your address or comments"
+                          required></textarea>
+                <br><br>
+
+                <!-- File Input -->
+                <label for="file">Upload ID Proof:</label><br>
+                <input type="file" id="file" name="file"
+                       accept=".pdf,.jpg,.jpeg,.png" required>
+                <br><br>
+
+                <!-- Submit and Reset Buttons -->
+                <input type="submit" value="Register">
+                <input type="reset" value="Clear">
+
+            </form>
+
+        </section>
+
+    </main>
+
+    <hr>
+
+    <!-- Footer -->
+    <footer>
+
+        <p>
+            &copy; 2026 Conference Management System.
+            All Rights Reserved.
+        </p>
+
+        <p>
+            Contact:
+            <a href="mailto:conference@example.com">
+                conference@example.com
+            </a>
+        </p>
+
+    </footer>
+
+</body>
+
+</html>

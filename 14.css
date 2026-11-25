@@ -1,0 +1,740 @@
+
+/* =========================================
+   CONFERENCE MANAGEMENT SYSTEM
+   PRACTICUM 13 + PRACTICUM 14
+   ========================================= */
+
+/* GENERAL STYLING */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f0f4f8;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* HEADER */
+
+header {
+    background: linear-gradient(135deg, #142850, #27496d);
+    color: white;
+    text-align: center;
+    padding: 25px 15px;
+}
+
+header h1 {
+    margin-bottom: 15px;
+    font-size: 30px;
+}
+
+/* NAVIGATION */
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 12px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    background-color: #00a8cc;
+    border-radius: 5px;
+}
+
+/* MAIN CONTENT */
+
+main {
+    width: 90%;
+    max-width: 1200px;
+    margin: 25px auto;
+}
+
+.card {
+    background-color: white;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.card h2 {
+    color: #142850;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #00a8cc;
+    padding-bottom: 8px;
+}
+
+.card h3 {
+    color: #27496d;
+    margin: 15px 0;
+}
+
+.card p {
+    margin-bottom: 12px;
+}
+
+/* BUTTONS */
+
+.action-button,
+.clear-button,
+.reset-button {
+    background-color: #142850;
+    color: white;
+    border: none;
+    padding: 11px 20px;
+    margin-top: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+.action-button:hover,
+.clear-button:hover,
+.reset-button:hover {
+    background-color: #00a8cc;
+    transform: translateY(-2px);
+}
+
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* INFORMATION CARD */
+
+.info-card {
+    display: none;
+    background-color: #e8f4fa;
+    border-left: 5px solid #00a8cc;
+    padding: 15px;
+    margin-top: 15px;
+    border-radius: 5px;
+}
+
+#notification {
+    color: #142850;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* GALLERY SECTION */
+
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.gallery-item {
+    background-color: #f0f4f8;
+    border: 1px solid #d5e1ec;
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.gallery-item:hover {
+    transform: scale(1.03);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.gallery-item h3 {
+    padding: 10px;
+    color: #142850;
+}
+
+.gallery-item p {
+    padding: 0 10px 15px;
+}
+
+/* ABOUT SECTION */
+
+#moreText {
+    display: none;
+}
+
+/* PRACTICUM 10: EVENT MANAGEMENT */
+
+#eventForm {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+#eventForm label {
+    font-weight: bold;
+    color: #27496d;
+}
+
+#eventForm input {
+    padding: 10px;
+    border: 1px solid #b7c9d6;
+    border-radius: 5px;
+    width: 100%;
+}
+
+#eventForm input:focus {
+    outline: none;
+    border-color: #00a8cc;
+}
+
+.event-card {
+    background-color: #e8f4fa;
+    border-left: 5px solid #27496d;
+    padding: 15px;
+    margin: 12px 0;
+    border-radius: 5px;
+}
+
+.edit-button,
+.delete-button {
+    border: none;
+    color: white;
+    padding: 7px 12px;
+    margin: 8px 5px 0 0;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.edit-button {
+    background-color: #27496d;
+}
+
+.delete-button {
+    background-color: #c0392b;
+}
+
+.edit-button:hover {
+    background-color: #00a8cc;
+}
+
+.delete-button:hover {
+    background-color: #922b21;
+}
+
+#emptyMessage {
+    text-align: center;
+    color: #777;
+    margin: 15px 0;
+}
+
+.clear-button {
+    background-color: #c0392b;
+}
+
+/* PRACTICUM 11: REGISTRATION FORM */
+
+#registrationForm {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#registrationForm fieldset {
+    border: 2px solid #27496d;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+#registrationForm legend {
+    color: #142850;
+    font-weight: bold;
+    padding: 0 10px;
+}
+
+#registrationForm label {
+    display: block;
+    font-weight: bold;
+    color: #27496d;
+    margin: 12px 0 5px;
+}
+
+#registrationForm input,
+#registrationForm select,
+#registrationForm textarea {
+    width: 100%;
+    padding: 11px;
+    border: 1px solid #b7c9d6;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+#registrationForm textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+#registrationForm input:focus,
+#registrationForm select:focus,
+#registrationForm textarea:focus {
+    outline: none;
+    border-color: #00a8cc;
+    box-shadow: 0 0 5px rgba(0, 168, 204, 0.3);
+}
+
+#registrationForm .invalid {
+    border: 2px solid #c0392b;
+}
+
+#registrationForm .valid {
+    border: 2px solid #27ae60;
+}
+
+.reset-button {
+    background-color: #777;
+}
+
+#successMessage {
+    color: #218838;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+#errorMessage {
+    color: #c0392b;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+/* PRACTICUM 12: API INTEGRATION */
+
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+    margin-top: 20px;
+}
+
+#updatesTable {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    margin-top: 15px;
+}
+
+#updatesTable th,
+#updatesTable td {
+    border: 1px solid #27496d;
+    padding: 12px;
+    text-align: left;
+}
+
+#updatesTable th {
+    background-color: #142850;
+    color: white;
+}
+
+#updatesTable tbody tr:nth-child(even) {
+    background-color: #e8f4fa;
+}
+
+#updatesTable tbody tr:hover {
+    background-color: #d5edf5;
+}
+
+#loadingMessage {
+    text-align: center;
+    color: #27496d;
+    font-weight: bold;
+    margin: 15px 0;
+}
+
+.api-error {
+    color: #c0392b;
+    text-align: center;
+    font-weight: bold;
+    margin: 15px 0;
+}
+
+#retryBtn {
+    display: none;
+    margin: 15px auto;
+    background-color: #27496d;
+}
+
+#retryBtn:hover {
+    background-color: #00a8cc;
+}
+
+/* PRACTICUM 13: TASK MANAGER */
+
+#taskForm {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+#taskForm label {
+    font-weight: bold;
+    color: #27496d;
+}
+
+#taskForm input,
+#taskForm textarea,
+#taskForm select {
+    width: 100%;
+    padding: 11px;
+    border: 1px solid #b7c9d6;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+#taskForm textarea {
+    min-height: 90px;
+    resize: vertical;
+}
+
+#taskForm input:focus,
+#taskForm textarea:focus,
+#taskForm select:focus {
+    outline: none;
+    border-color: #00a8cc;
+    box-shadow: 0 0 5px rgba(0, 168, 204, 0.3);
+}
+
+.task-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.task-card {
+    background-color: #e8f4fa;
+    border: 1px solid #b7c9d6;
+    border-left: 5px solid #27496d;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 5px;
+    transition: 0.3s;
+}
+
+.task-card:hover {
+    background-color: #d5edf5;
+    transform: translateY(-3px);
+}
+
+.task-card h3 {
+    color: #142850;
+    margin: 0 0 10px;
+}
+
+.task-card p {
+    margin: 7px 0;
+    overflow-wrap: anywhere;
+}
+
+.task-status {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 15px;
+    font-size: 13px;
+    font-weight: bold;
+    background-color: #dce6f1;
+    color: #142850;
+}
+
+.task-status.completed {
+    background-color: #d4edda;
+    color: #218838;
+}
+
+.task-status.in-progress {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+.task-status.pending {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.task-edit-button,
+.task-delete-button,
+.task-update-button {
+    border: none;
+    color: white;
+    padding: 8px 12px;
+    margin: 8px 5px 0 0;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.task-edit-button {
+    background-color: #27496d;
+}
+
+.task-delete-button {
+    background-color: #c0392b;
+}
+
+.task-update-button {
+    background-color: #218838;
+}
+
+.task-edit-button:hover {
+    background-color: #00a8cc;
+}
+
+.task-delete-button:hover {
+    background-color: #922b21;
+}
+
+.task-update-button:hover {
+    background-color: #176b2c;
+}
+
+#noTasksMessage {
+    text-align: center;
+    color: #777;
+    margin: 15px 0;
+}
+
+/* =========================================
+   PRACTICUM 14: SEARCH AND FILTER GALLERY
+   ========================================= */
+
+.filter-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.filter-container input,
+.filter-container select {
+    flex: 1;
+    min-width: 200px;
+    padding: 12px;
+    border: 1px solid #b7c9d6;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+.filter-container input:focus,
+.filter-container select:focus {
+    outline: none;
+    border-color: #00a8cc;
+    box-shadow: 0 0 5px rgba(0, 168, 204, 0.3);
+}
+
+#clearGalleryFilter {
+    margin-top: 0;
+    white-space: nowrap;
+}
+
+#galleryResultMessage {
+    color: #27496d;
+    font-weight: bold;
+    margin: 15px 0;
+}
+
+#filteredGallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+#filteredGallery .gallery-item {
+    position: relative;
+    transition: 0.3s;
+}
+
+#filteredGallery .gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-item.hide {
+    display: none;
+}
+
+#noGalleryResults {
+    display: none;
+    text-align: center;
+    color: #c0392b;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+.gallery-info {
+    background-color: #e8f4fa;
+    border: 1px solid #b7c9d6;
+    border-radius: 6px;
+    padding: 15px;
+    margin-top: 25px;
+}
+
+.gallery-info summary {
+    color: #142850;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 5px;
+    transition: 0.3s;
+}
+
+.gallery-info summary:hover {
+    color: #00a8cc;
+}
+
+.gallery-info p {
+    margin-top: 12px;
+}
+
+.gallery-info ul {
+    margin: 10px 0 0 25px;
+}
+
+/* FOOTER */
+
+footer {
+    background-color: #142850;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    margin-top: 30px;
+}
+
+footer h3 {
+    margin-bottom: 10px;
+}
+
+/* TOP AND MENU BUTTONS */
+
+#menuBtn,
+#topBtn {
+    background-color: #142850;
+    color: white;
+    border: none;
+    padding: 12px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    position: fixed;
+    z-index: 1000;
+}
+
+#menuBtn {
+    top: 15px;
+    left: 15px;
+    display: none;
+}
+
+#topBtn {
+    bottom: 20px;
+    right: 20px;
+}
+
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 768px) {
+
+    main {
+        width: 95%;
+    }
+
+    .gallery-container,
+    #filteredGallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    nav {
+        gap: 10px;
+    }
+
+    header h1 {
+        font-size: 24px;
+    }
+
+    .task-list {
+        grid-template-columns: 1fr;
+    }
+
+    .filter-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .filter-container input,
+    .filter-container select {
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+
+    #updatesTable th,
+    #updatesTable td {
+        padding: 8px;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 500px) {
+
+    .gallery-container,
+    #filteredGallery {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        padding: 15px;
+    }
+
+    nav {
+        flex-direction: column;
+    }
+
+    header h1 {
+        font-size: 21px;
+    }
+
+    #registrationForm fieldset {
+        padding: 12px;
+    }
+
+    .action-button,
+    .clear-button,
+    .reset-button {
+        width: 100%;
+    }
+
+    .task-edit-button,
+    .task-delete-button,
+    .task-update-button {
+        padding: 7px 9px;
+        font-size: 13px;
+    }
+}
+
+/* END OF PRACTICUM 14 CSS */

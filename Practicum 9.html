@@ -1,0 +1,168 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conference Management Gallery</title>
+
+    <link rel="stylesheet" href="9.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>Conference Management System</h1>
+        <p>Explore Our Conference Events and Activities</p>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+
+        <section id="home" class="card">
+            <h2>Welcome to Our Conference Gallery</h2>
+            <p>
+                Explore memorable moments from our conferences,
+                technical sessions, workshops and networking events.
+                Our gallery showcases innovation, learning and teamwork.
+            </p>
+
+            <!-- NEW: Information Button -->
+            <button id="infoBtn" class="action-button">
+                Show Conference Information
+            </button>
+
+            <!-- NEW: Information Card -->
+            <div id="infoCard" class="info-card">
+                <h3>Conference Information</h3>
+                <p>
+                    Our conference provides opportunities to learn
+                    new technologies, meet experts and develop skills.
+                </p>
+            </div>
+
+            <!-- NEW: Notification -->
+            <div id="notification" class="notification">
+                Welcome to the Conference Management System!
+            </div>
+
+        </section>
+
+        <!-- Image Gallery -->
+        <section id="gallery" class="card">
+
+            <h2>Conference Image Gallery</h2>
+
+            <div class="gallery">
+
+                <div class="gallery-item">
+                    <img src="conference1.jpg.webp" alt="Conference opening ceremony">
+                    <div class="caption">
+                        <h3>Opening Ceremony</h3>
+                        <p>Inauguration of the annual conference.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="conference2.jpg.webp" alt="Guest speaker presenting">
+                    <div class="caption">
+                        <h3>Guest Speakers</h3>
+                        <p>Experts sharing their knowledge and ideas.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="conference3.jpg.jpg" alt="Technical presentation">
+                    <div class="caption">
+                        <h3>Technical Sessions</h3>
+                        <p>Presentations about modern technologies.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="conference4.jpg.jpg" alt="Students attending workshop">
+                    <div class="caption">
+                        <h3>Workshops</h3>
+                        <p>Practical learning and interactive activities.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="conference5.jpg.jpg" alt="Conference participants networking">
+                    <div class="caption">
+                        <h3>Networking</h3>
+                        <p>Connecting students and industry professionals.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <img src="conference6.jpg.webp" alt="Conference award ceremony">
+                    <div class="caption">
+                        <h3>Award Ceremony</h3>
+                        <p>Recognizing achievements and excellence.</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="card">
+
+            <h2>About Our Events</h2>
+
+            <p>
+                Our conference provides a platform for students,
+                professionals and industry experts to exchange ideas,
+                explore innovations and develop professional skills.
+            </p>
+
+            <!-- NEW: Show More / Show Less -->
+            <button id="aboutBtn" class="action-button">
+                Show More
+            </button>
+
+            <div id="moreContent">
+                <h3>Our Conference Activities</h3>
+                <p>
+                    We organize technical sessions, workshops,
+                    expert talks, networking activities and award
+                    ceremonies to encourage learning and innovation.
+                </p>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <p>&copy; 2026 Conference Management System. All Rights Reserved.</p>
+        <p>Email: conference@example.com</p>
+    </footer>
+
+    <!-- JavaScript Responsive Menu Button -->
+    <button class="menu-button" onclick="toggleMenu()">
+        ☰ Menu
+    </button>
+
+    <!-- Back to Top Button -->
+    <button class="top-button" onclick="goToTop()">
+        ↑ Top
+    </button>
+
+    <script src="9.js"></script>
+
+</body>
+</html>

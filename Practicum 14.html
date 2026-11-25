@@ -1,0 +1,387 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conference Management System</title>
+    <link rel="stylesheet" href="13.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <h1>Conference Management System</h1>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#gallery">Gallery</a>
+            <a href="#manageEvents">Manage Events</a>
+            <a href="#registration">Registration</a>
+            <a href="#apiUpdates">API Updates</a>
+            <a href="#taskManager">Task Manager</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- HOME SECTION -->
+        <section id="home" class="card">
+            <h2>Welcome to Conference Management</h2>
+
+            <p>
+                Our Conference Management System helps organize
+                conferences, manage events and register participants
+                easily.
+            </p>
+
+            <button id="infoBtn" class="action-button">
+                Show Information
+            </button>
+
+            <div id="infoCard" class="info-card">
+                <p>
+                    Join our conference to explore new ideas,
+                    share knowledge and connect with experts.
+                </p>
+            </div>
+
+            <p id="notification"></p>
+        </section>
+
+        <!-- GALLERY SECTION -->
+        <section id="gallery" class="card">
+            <h2>Conference Gallery</h2>
+
+            <!-- PRACTICUM 14: SEARCH AND FILTER CONTROLS -->
+            <div class="filter-container">
+
+                <input
+                    type="text"
+                    id="gallerySearch"
+                    placeholder="Search conference activities..."
+                >
+
+                <select id="galleryCategory">
+                    <option value="all">All Categories</option>
+                    <option value="venue">Conference Venue</option>
+                    <option value="speaker">Guest Speakers</option>
+                    <option value="audience">Audience</option>
+                    <option value="discussion">Group Discussion</option>
+                    <option value="presentation">Presentations</option>
+                    <option value="networking">Networking</option>
+                </select>
+
+                <button type="button" id="clearGalleryFilter"
+                    class="action-button">
+                    Clear Filter
+                </button>
+
+            </div>
+
+            <p id="galleryResultMessage">
+                Showing all conference activities.
+            </p>
+
+            <div class="gallery-container" id="filteredGallery">
+
+                <div class="gallery-item" data-category="venue">
+                    <img src="conference1.jpg.webp" alt="Conference Hall">
+                    <h3>Conference Hall</h3>
+                    <p>Modern conference arrangements.</p>
+                </div>
+
+                <div class="gallery-item" data-category="speaker">
+                    <img src="conference2.jpg.webp" alt="Guest Speaker">
+                    <h3>Guest Speaker</h3>
+                    <p>Expert speakers sharing knowledge.</p>
+                </div>
+
+                <div class="gallery-item" data-category="audience">
+                    <img src="conference3.jpg.jpg" alt="Audience">
+                    <h3>Audience</h3>
+                    <p>Participants attending the conference.</p>
+                </div>
+
+                <div class="gallery-item" data-category="discussion">
+                    <img src="conference4.jpg.jpg" alt="Discussion">
+                    <h3>Group Discussion</h3>
+                    <p>Interactive discussions and activities.</p>
+                </div>
+
+                <div class="gallery-item" data-category="presentation">
+                    <img src="conference5.jpg.jpg" alt="Presentation">
+                    <h3>Presentation</h3>
+                    <p>Technical presentations and demonstrations.</p>
+                </div>
+
+                <div class="gallery-item" data-category="networking">
+                    <img src="conference6.jpg.webp" alt="Networking">
+                    <h3>Networking</h3>
+                    <p>Connecting with other participants.</p>
+                </div>
+
+            </div>
+
+            <p id="noGalleryResults">
+                No matching conference activities found.
+            </p>
+
+            <!-- PRACTICUM 14: DETAILS AND SUMMARY -->
+            <details class="gallery-info">
+                <summary>About Conference Gallery</summary>
+
+                <p>
+                    This gallery displays different conference activities.
+                    Users can search and filter images to find specific
+                    conference activities.
+                </p>
+
+                <ul>
+                    <li>Search for conference activities.</li>
+                    <li>Filter images by category.</li>
+                    <li>View conference presentations and discussions.</li>
+                    <li>Explore networking activities.</li>
+                </ul>
+            </details>
+
+        </section>
+
+        <!-- ABOUT SECTION -->
+        <section id="about" class="card">
+            <h2>About Us</h2>
+
+            <p>
+                The Conference Management System is designed to
+                simplify conference planning and management.
+            </p>
+
+            <p id="moreText">
+                It provides facilities for event management,
+                participant registration and conference updates.
+                It helps organizers maintain information efficiently.
+            </p>
+
+            <button id="readMoreBtn" class="action-button">
+                Read More
+            </button>
+        </section>
+
+        <!-- PRACTICUM 10: EVENT MANAGEMENT -->
+        <section id="manageEvents" class="card">
+            <h2>Manage Conference Events</h2>
+
+            <form id="eventForm">
+
+                <label for="eventName">Event Name:</label>
+                <input type="text" id="eventName"
+                    placeholder="Enter event name" required>
+
+                <label for="eventDate">Event Date:</label>
+                <input type="date" id="eventDate" required>
+
+                <label for="eventVenue">Event Venue:</label>
+                <input type="text" id="eventVenue"
+                    placeholder="Enter venue" required>
+
+                <button type="submit" class="action-button">
+                    Add Event
+                </button>
+
+            </form>
+
+            <h3>Event List</h3>
+
+            <div id="eventList"></div>
+
+            <p id="emptyMessage">No events added yet.</p>
+
+            <button id="clearBtn" class="clear-button">
+                Clear All Events
+            </button>
+        </section>
+
+        <!-- PRACTICUM 11: REGISTRATION FORM -->
+        <section id="registration" class="card">
+            <h2>Conference Registration</h2>
+
+            <form id="registrationForm" novalidate>
+
+                <fieldset>
+                    <legend>Personal Information</legend>
+
+                    <label for="name">Full Name:</label>
+                    <input type="text" id="name"
+                        placeholder="Enter your full name" required>
+
+                    <label for="email">Email Address:</label>
+                    <input type="email" id="email"
+                        placeholder="Enter your email" required>
+
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" id="phone"
+                        placeholder="Enter 10-digit phone number" required>
+
+                    <label for="age">Age:</label>
+                    <input type="number" id="age"
+                        placeholder="Enter your age" required>
+
+                </fieldset>
+
+                <fieldset>
+                    <legend>Conference Details</legend>
+
+                    <label for="conferenceDate">Conference Date:</label>
+                    <input type="date" id="conferenceDate" required>
+
+                    <label for="category">Participant Category:</label>
+                    <select id="category" required>
+                        <option value="">Select Category</option>
+                        <option value="Student">Student</option>
+                        <option value="Faculty">Faculty</option>
+                        <option value="Professional">Professional</option>
+                    </select>
+
+                    <label for="message">Additional Information:</label>
+                    <textarea id="message"
+                        placeholder="Enter your message"></textarea>
+
+                </fieldset>
+
+                <button type="submit" class="action-button">
+                    Submit Registration
+                </button>
+
+                <button type="reset" class="reset-button">
+                    Reset Form
+                </button>
+
+            </form>
+
+            <p id="successMessage"></p>
+            <p id="errorMessage"></p>
+        </section>
+
+        <!-- PRACTICUM 12: API INTEGRATION -->
+        <section id="apiUpdates" class="card">
+
+            <h2>Conference News and Updates</h2>
+
+            <p>
+                View conference-related updates retrieved dynamically
+                from an external API.
+            </p>
+
+            <button id="fetchBtn" class="action-button">
+                Load Conference Updates
+            </button>
+
+            <p id="loadingMessage">
+                Click the button to load updates.
+            </p>
+
+            <p id="apiError" class="api-error"></p>
+
+            <div class="table-container">
+
+                <table id="updatesTable">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Update Title</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="updatesBody"></tbody>
+                </table>
+
+            </div>
+
+            <button id="retryBtn" class="action-button">
+                Retry Loading
+            </button>
+
+        </section>
+
+        <!-- PRACTICUM 13: TASK MANAGER -->
+        <section id="taskManager" class="card">
+
+            <h2>Conference Task Manager</h2>
+
+            <p>
+                Add, view, edit, delete and update conference tasks.
+                Your tasks are saved in Local Storage.
+            </p>
+
+            <form id="taskForm">
+
+                <label for="taskTitle">Task Title:</label>
+                <input type="text" id="taskTitle"
+                    placeholder="Enter task title" required>
+
+                <label for="taskDescription">Task Description:</label>
+                <textarea id="taskDescription"
+                    placeholder="Enter task description" required></textarea>
+
+                <label for="taskPriority">Task Priority:</label>
+                <select id="taskPriority" required>
+                    <option value="">Select Priority</option>
+                    <option value="High">High</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Low">Low</option>
+                </select>
+
+                <label for="taskStatus">Task Status:</label>
+                <select id="taskStatus" required>
+                    <option value="Pending">Pending</option>
+                    <option value="In Progress">In Progress</option>
+                    <option value="Completed">Completed</option>
+                </select>
+
+                <button type="submit" id="taskSubmitBtn"
+                    class="action-button">
+                    Add Task
+                </button>
+
+                <button type="reset" id="taskResetBtn"
+                    class="reset-button">
+                    Reset
+                </button>
+
+            </form>
+
+            <h3>Task List</h3>
+
+            <div id="taskList" class="task-list"></div>
+
+            <p id="noTasksMessage">
+                No tasks available. Add your first task.
+            </p>
+
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer id="contact">
+        <h3>Contact Us</h3>
+        <p>Email: conference@example.com</p>
+        <p>Phone: +91 9876543210</p>
+        <p>&copy; 2026 Conference Management System</p>
+    </footer>
+
+    <!-- NAVIGATION BUTTONS -->
+    <button id="menuBtn" onclick="toggleMenu()">☰</button>
+
+    <button id="topBtn" onclick="goToTop()">↑</button>
+
+    <!-- JAVASCRIPT FILE -->
+    <script src="13.js"></script>
+
+</body>
+</html>

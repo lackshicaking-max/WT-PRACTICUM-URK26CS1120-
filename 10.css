@@ -1,0 +1,453 @@
+
+/* GENERAL STYLING */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f4f8;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* HEADER */
+
+header {
+    background: linear-gradient(to right, #142850, #27496d);
+    color: white;
+    text-align: center;
+    padding: 35px 20px;
+    animation: slideDown 1s ease;
+}
+
+header h1 {
+    font-size: 32px;
+}
+
+/* NAVIGATION */
+
+nav {
+    background-color: #142850;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 15px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    background-color: #00a8cc;
+    border-radius: 5px;
+    transform: scale(1.1);
+}
+
+/* MAIN CONTENT */
+
+main {
+    width: 85%;
+    max-width: 1100px;
+    margin: 30px auto;
+}
+
+/* CARDS */
+
+.card {
+    background-color: white;
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    animation: fadeIn 1.2s ease;
+}
+
+h2 {
+    color: #142850;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* CSS GRID GALLERY */
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+/* GALLERY ITEMS */
+
+.gallery-item {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    transition: transform 0.4s, box-shadow 0.4s;
+}
+
+.gallery-item:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.2);
+}
+
+/* GALLERY IMAGES */
+
+.gallery-item img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s, opacity 0.5s;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.08);
+    opacity: 0.85;
+}
+
+/* IMAGE CAPTIONS */
+
+.caption {
+    padding: 15px;
+    text-align: center;
+}
+
+.caption h3 {
+    color: #27496d;
+    margin-bottom: 8px;
+}
+
+.caption p {
+    color: #555;
+    font-size: 14px;
+}
+
+/* FOOTER */
+
+footer {
+    background-color: #142850;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* MENU BUTTON */
+
+.menu-button {
+    display: none;
+    background-color: #142850;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* BACK TO TOP BUTTON */
+
+.top-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #00a8cc;
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.top-button:hover {
+    background-color: #142850;
+    transform: scale(1.1);
+}
+
+/* ACTION BUTTONS */
+
+.action-button {
+    display: block;
+    margin: 20px auto;
+    padding: 12px 22px;
+    background-color: #142850;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.action-button:hover {
+    background-color: #00a8cc;
+    transform: scale(1.05);
+}
+
+/* INFORMATION CARD */
+
+.info-card {
+    display: none;
+    background-color: #e8f4fa;
+    border-left: 5px solid #00a8cc;
+    padding: 20px;
+    margin-top: 15px;
+    border-radius: 5px;
+    opacity: 0;
+}
+
+.info-card.show {
+    display: block;
+    animation: fadeIn 0.8s forwards;
+}
+
+.info-card h3 {
+    color: #142850;
+}
+
+/* NOTIFICATION */
+
+.notification {
+    display: none;
+    background-color: #142850;
+    color: white;
+    text-align: center;
+    padding: 12px;
+    margin-top: 15px;
+    border-radius: 5px;
+}
+
+.notification.show {
+    display: block;
+    animation: slideDown 0.5s ease;
+}
+
+/* ABOUT EXTRA CONTENT */
+
+#moreContent {
+    display: none;
+    background-color: #f0f4f8;
+    padding: 20px;
+    margin-top: 15px;
+    border-radius: 5px;
+}
+
+#moreContent.show {
+    display: block;
+    animation: fadeIn 0.8s forwards;
+}
+
+/* KEYFRAME ANIMATIONS */
+
+@keyframes fadeIn {
+
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+@keyframes slideDown {
+
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+/* NEW: PRACTICUM 10 EVENT FORM */
+
+#eventForm {
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+#eventForm label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+    color: #142850;
+}
+
+#eventForm input,
+#eventForm textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    border: 1px solid #bbb;
+    border-radius: 5px;
+    font-family: Arial, sans-serif;
+}
+
+#eventForm textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+/* NEW: DYNAMIC EVENT CARDS */
+
+.event-card {
+    background-color: #e8f4fa;
+    border-left: 5px solid #142850;
+    padding: 20px;
+    margin: 15px 0;
+    border-radius: 8px;
+    animation: fadeIn 0.8s ease;
+}
+
+.event-card h3 {
+    color: #142850;
+    margin-bottom: 8px;
+}
+
+.event-card p {
+    margin: 5px 0;
+}
+
+/* EDIT AND DELETE BUTTONS */
+
+.edit-button,
+.delete-button,
+.clear-button {
+    padding: 9px 15px;
+    margin: 10px 5px 0 0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    transition: 0.3s;
+}
+
+.edit-button {
+    background-color: #27496d;
+}
+
+.delete-button {
+    background-color: #c0392b;
+}
+
+.clear-button {
+    display: block;
+    margin: 20px auto;
+    background-color: #c0392b;
+}
+
+.edit-button:hover {
+    background-color: #00a8cc;
+}
+
+.delete-button:hover,
+.clear-button:hover {
+    background-color: #922b21;
+    transform: scale(1.05);
+}
+
+/* EMPTY MESSAGE */
+
+#emptyMessage {
+    text-align: center;
+    color: #777;
+    padding: 15px;
+}
+
+/* TABLET RESPONSIVE DESIGN */
+
+@media (max-width: 768px) {
+
+    main {
+        width: 95%;
+    }
+
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    header h1 {
+        font-size: 28px;
+    }
+
+    .gallery-item img {
+        height: 200px;
+    }
+
+}
+
+/* MOBILE RESPONSIVE DESIGN */
+
+@media (max-width: 500px) {
+
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+
+    nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+    }
+
+    nav a {
+        padding: 10px;
+    }
+
+    header {
+        padding: 25px 10px;
+    }
+
+    header h1 {
+        font-size: 23px;
+    }
+
+    header p {
+        font-size: 14px;
+    }
+
+    .card {
+        padding: 15px;
+    }
+
+    .gallery-item img {
+        height: 200px;
+    }
+
+    .menu-button {
+        display: block;
+        width: 100%;
+    }
+
+    .top-button {
+        bottom: 15px;
+        right: 15px;
+    }
+
+}
